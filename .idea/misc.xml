@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Black">
+    <option name="enabledOnReformat" value="true" />
+    <option name="enabledOnSave" value="true" />
+    <option name="sdkUUID" value="31b8238d-59a1-408e-9132-1d4fd71927a0" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Pipenv (langchain-chat-assistant)" project-jdk-type="Python SDK" />
+</project>
