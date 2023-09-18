@@ -33,6 +33,7 @@ def ingest_docs():
     print(f"Going to add {len(documents)} to Pinecone")
     Pinecone.from_documents(documents, embeddings, index_name="langchain-doc-index")
     print("****Loading to vectorestore done ***")
+    # This still doesnt work
 
 
 if __name__ == "__main__":
