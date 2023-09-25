@@ -12,8 +12,12 @@ pinecone.init(
 
 
 def ingest_docs():
+    # Unable to download the langchain readthedocs - have to make do with whatever i got
+    # One more exercise that has become purely theoretical . really feel shitty about this.
+
     loader = ReadTheDocsLoader(
-        "/home/rameshv/Repos/GenerativeAI/LangChainCourse/langchain-chat-assistant/langchain-docs/api.python.langchain.com/en/latest/index.html"
+        # path="langchain-docs/api.python.langchain.com/en/latest/"
+        path="langchain-docs/langchain.readthedocs.io/en/latest"
     )
     raw_documents = loader.load()
     print(f"loaded {len(raw_documents)} documents")
@@ -21,8 +25,8 @@ def ingest_docs():
         chunk_size=400, chunk_overlap=50, separators=["\n\n", "\n", " ", ""]
     )
 
-    documents = text_splitter.split_documents(raw_documents)
-
+    documents = text_splitter.split_documents(documents=raw_documents)
+    print(f"Split into {len(documents)} chunks")
     # Prefix https to the source so the user can go to the source directly
     for doc in documents:
         new_url = doc.metadata["source"]
